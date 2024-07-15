@@ -1,16 +1,18 @@
 package Grafica;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
+import java.awt.Color;
 
 public class Inicio extends JFrame {
 
@@ -40,6 +42,7 @@ public class Inicio extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 877, 611);
 		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.info);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -51,12 +54,13 @@ public class Inicio extends JFrame {
 		contentPane.add(lblUniversidad);
 		
 		JButton btnMostrarPagina = new JButton("Mostrar Página de Ventas");
+		btnMostrarPagina.setBackground(new Color(255, 153, 204));
 		btnMostrarPagina.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 15));
 		btnMostrarPagina.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnMostrarPagina.setBounds(639, 520, 183, 27);
+		btnMostrarPagina.setBounds(633, 520, 189, 27);
 		contentPane.add(btnMostrarPagina);
 		
 		JLabel lblFacultad = new JLabel("FACULTAD DE INGENIERÍA DE SISTEMAS COMPUTACIONALES\r\n");
@@ -76,7 +80,7 @@ public class Inicio extends JFrame {
 		
 		JLabel lblIntegrantes = new JLabel("Integrantes:");
 		lblIntegrantes.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 25));
-		lblIntegrantes.setBounds(385, 202, 123, 21);
+		lblIntegrantes.setBounds(385, 196, 123, 27);
 		contentPane.add(lblIntegrantes);
 		
 		JLabel lblNombre1 = new JLabel("Cuevas, Yessica 8-1002-794  ");
@@ -110,12 +114,25 @@ public class Inicio extends JFrame {
 		contentPane.add(lblFecha1);
 		
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBackground(new Color(153, 204, 153));
 		btnSalir.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 15));
 		btnSalir.setBounds(37, 523, 93, 24);
-		contentPane.add(btnSalir);
+		btnSalir.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JOptionPane.showMessageDialog(contentPane, "Hasta pronto!!", "Salir", JOptionPane.INFORMATION_MESSAGE);
+						dispose();
+					}
+					});
+							contentPane.add(btnSalir);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(55, 173, 133, 87);
-		contentPane.add(lblNewLabel);
+		JLabel lblUTP = new JLabel("");
+		lblUTP.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen1.png"));
+		lblUTP.setBounds(56, 31, 100, 87);
+		contentPane.add(lblUTP);
+		
+		JLabel lblFISC = new JLabel("");
+		lblFISC.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen6.png"));
+		lblFISC.setBounds(740, 21, 94, 109);
+		contentPane.add(lblFISC);
 	}
 }
