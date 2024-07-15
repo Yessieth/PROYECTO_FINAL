@@ -113,9 +113,19 @@ public class PrincipalVentas extends JFrame {
 		lblNewLabel_1.setForeground(Color.WHITE);
 		
 		JLabel lblNewLabel_2 = new JLabel("Agregar carro");
-		lblNewLabel_2.setBounds(304, 111, 94, 21);
+		lblNewLabel_2.setBounds(315, 111, 94, 21);
 		panel.add(lblNewLabel_2);
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		
+		JLabel lblNewLabel_6 = new JLabel("Aplicar a financiamiento");
+		lblNewLabel_6.setBounds(495, 112, 162, 19);
+		panel.add(lblNewLabel_6);
+		lblNewLabel_6.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		lblNewLabel_6.setForeground(Color.WHITE);
+		
+		JLabel lblNewLabel_7 = new JLabel("New label");
+		lblNewLabel_7.setBounds(208, 293, 45, 13);
+		contentPane.add(lblNewLabel_7);
 	}
 }
