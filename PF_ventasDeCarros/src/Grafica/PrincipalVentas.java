@@ -27,6 +27,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.JEditorPane;
 import javax.swing.JMenu;
+import javax.swing.JOptionPane;
+
 import java.awt.Canvas;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
@@ -42,6 +44,7 @@ import javax.swing.SpringLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.SystemColor;
 
 public class PrincipalVentas extends JFrame {
 
@@ -72,14 +75,14 @@ public class PrincipalVentas extends JFrame {
 		setBounds(100, 100, 871, 675);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(255, 255, 255));
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(100, 149, 237));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(5, 5, 872, 136);
+		panel.setBounds(0, 0, 877, 141);
 		panel.setBackground(new Color(0, 0, 0));
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -119,18 +122,36 @@ public class PrincipalVentas extends JFrame {
 		panel.add(lblInventario);
 		lblInventario.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		lblInventario.setForeground(Color.WHITE);
+	       lblInventario.addMouseListener(new MouseAdapter() {
+	            public void mouseClicked(MouseEvent e) {
+	            	  dispose(); 
+	     		     Inventario Inventario = new Inventario();
+	     		     Inventario.setVisible(true);
+	            }});
 		
 		JLabel lblAgregarCarro = new JLabel("Agregar carro");
 		lblAgregarCarro.setBounds(315, 111, 94, 21);
 		panel.add(lblAgregarCarro);
 		lblAgregarCarro.setForeground(Color.WHITE);
 		lblAgregarCarro.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+	       lblAgregarCarro.addMouseListener(new MouseAdapter() {
+	            public void mouseClicked(MouseEvent e) {
+	            	  dispose(); 
+	     		     AgregarCarro AgregarCarro = new AgregarCarro();
+	     		     AgregarCarro.setVisible(true);
+	            }});
 		
 		JLabel lblAplicar = new JLabel("Aplicar a financiamiento");
 		lblAplicar.setBounds(495, 112, 162, 19);
 		panel.add(lblAplicar);
 		lblAplicar.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		lblAplicar.setForeground(Color.WHITE);
+	       lblAplicar.addMouseListener(new MouseAdapter() {
+	            public void mouseClicked(MouseEvent e) {
+	            	  dispose(); 
+	     		     AplicarFinanciamniento AplicarFinanciamniento = new AplicarFinanciamniento();
+	     		     AplicarFinanciamniento.setVisible(true);
+	            }});
 		
 		JLabel lblCar1 = new JLabel("");
 		lblCar1.setBounds(10, 30, 104, 71);
@@ -163,8 +184,8 @@ public class PrincipalVentas extends JFrame {
 		contentPane.add(lblimage2);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(5, 312, 872, 259);
-		panel_1.setBackground(new Color(255, 0, 0));
+		panel_1.setBounds(0, 312, 877, 259);
+		panel_1.setBackground(new Color(25, 25, 112));
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -175,38 +196,38 @@ public class PrincipalVentas extends JFrame {
 		panel_1.add(lblNewLabel_9);
 		
 		JComboBox comboBoxMarca = new JComboBox();
-		comboBoxMarca.setBounds(240, 78, 152, 21);
+		comboBoxMarca.setBounds(337, 78, 152, 21);
 		comboBoxMarca.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		comboBoxMarca.setModel(new DefaultComboBoxModel(new String[] {"Marca", "Acura", "BMW", "Chevrolet", "Hyundai", "Kia", "Mazda", "Mitsubishi", "Nissan", "Lexus", "Toyota"}));
 		panel_1.add(comboBoxMarca);
 		
 		JComboBox comboBox_Tipo = new JComboBox();
-		comboBox_Tipo.setBounds(44, 78, 152, 21);
+		comboBox_Tipo.setBounds(141, 78, 152, 21);
 		comboBox_Tipo.setModel(new DefaultComboBoxModel(new String[] {"Tipo", "Sedán", "Suv", "Pickup", "Hacktback", "Panel"}));
 		comboBox_Tipo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		panel_1.add(comboBox_Tipo);
 		
 		JComboBox comboBoxPrecioDesde = new JComboBox();
-		comboBoxPrecioDesde.setBounds(446, 78, 152, 21);
+		comboBoxPrecioDesde.setBounds(44, 141, 152, 21);
 		comboBoxPrecioDesde.setModel(new DefaultComboBoxModel(new String[] {"Precio desde ", "$5,000", "$10,000", "$15,000", "$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000"}));
 		comboBoxPrecioDesde.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		panel_1.add(comboBoxPrecioDesde);
 		
 		JComboBox comboBoxPrecioHasta = new JComboBox();
-		comboBoxPrecioHasta.setBounds(653, 78, 152, 21);
+		comboBoxPrecioHasta.setBounds(240, 141, 152, 21);
 		comboBoxPrecioHasta.setModel(new DefaultComboBoxModel(new String[] {"Precio hasta", "$5,000", "$10,000", "$15,000", "$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000", "$55,000", "$60,000", "$65,000", "$70,000", "$75,000", "$80,000", "$85,000", "$90,000", "$95,000", "$100,000"}));
 		comboBoxPrecioHasta.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		panel_1.add(comboBoxPrecioHasta);
 		
 		JComboBox comboBoxAñoDesde = new JComboBox();
-		comboBoxAñoDesde.setBounds(183, 141, 152, 21);
-		comboBoxAñoDesde.setModel(new DefaultComboBoxModel(new String[] {"Año desde ", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"}));
+		comboBoxAñoDesde.setBounds(446, 141, 152, 21);
+		comboBoxAñoDesde.setModel(new DefaultComboBoxModel(new String[] {"Año desde ", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"}));
 		comboBoxAñoDesde.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		panel_1.add(comboBoxAñoDesde);
 		
 		JComboBox comboBoxAñoHasta = new JComboBox();
-		comboBoxAñoHasta.setBounds(520, 141, 152, 21);
-		comboBoxAñoHasta.setModel(new DefaultComboBoxModel(new String[] {"Año hasta", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"}));
+		comboBoxAñoHasta.setBounds(653, 141, 152, 21);
+		comboBoxAñoHasta.setModel(new DefaultComboBoxModel(new String[] {"Año hasta", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000"}));
 		comboBoxAñoHasta.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		panel_1.add(comboBoxAñoHasta);
 		
@@ -214,5 +235,24 @@ public class PrincipalVentas extends JFrame {
 		btnBuscar.setBounds(364, 200, 121, 26);
 		btnBuscar.setFont(new Font("Arial Unicode MS", Font.BOLD, 15));
 		panel_1.add(btnBuscar);
+		
+		JComboBox comboBoxMarca_1 = new JComboBox();
+		comboBoxMarca_1.setModel(new DefaultComboBoxModel(new String[] {"Modelo"}));
+		comboBoxMarca_1.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		comboBoxMarca_1.setBounds(545, 78, 152, 21);
+		panel_1.add(comboBoxMarca_1);
+		
+		JButton btnSalir = new JButton("SALIR");
+		btnSalir.setFont(new Font("Arial Unicode MS", Font.BOLD, 15));
+		btnSalir.setBounds(10, 574, 121, 26);
+		contentPane.add(btnSalir);
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(contentPane, "Hasta pronto!!", "Salir", JOptionPane.INFORMATION_MESSAGE);
+					dispose();
+				}
+				});
+						contentPane.add(btnSalir);
+	
 	}
 }
