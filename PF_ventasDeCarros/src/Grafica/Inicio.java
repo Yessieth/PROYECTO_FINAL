@@ -1,5 +1,4 @@
 package Grafica;
-
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -58,8 +57,12 @@ public class Inicio extends JFrame {
 		btnMostrarPagina.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 15));
 		btnMostrarPagina.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		      // Cierra la ventana actual
+		 			    dispose(); 
+		     PrincipalVentas PrincipalVentas = new PrincipalVentas();
+		     PrincipalVentas.setVisible(true);
+		}});
+		
 		btnMostrarPagina.setBounds(633, 520, 189, 27);
 		contentPane.add(btnMostrarPagina);
 		

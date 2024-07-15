@@ -29,6 +29,10 @@ import javax.swing.JEditorPane;
 import javax.swing.JMenu;
 import java.awt.Canvas;
 import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -103,54 +107,60 @@ public class PrincipalVentas extends JFrame {
 		panel.add(lblInicio);
 		lblInicio.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		lblInicio.setForeground(Color.WHITE);
+	       lblInicio.addMouseListener(new MouseAdapter() {
+	            public void mouseClicked(MouseEvent e) {
+	            	  dispose(); 
+	     		     Inicio Inicio = new Inicio();
+	     		     Inicio.setVisible(true);
+	            }});
+	       
+		JLabel lblInventario = new JLabel("Inventario");
+		lblInventario.setBounds(166, 111, 66, 21);
+		panel.add(lblInventario);
+		lblInventario.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		lblInventario.setForeground(Color.WHITE);
 		
-		JLabel lblNewLabel_1 = new JLabel("Inventario");
-		lblNewLabel_1.setBounds(166, 111, 66, 21);
-		panel.add(lblNewLabel_1);
-		lblNewLabel_1.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		lblNewLabel_1.setForeground(Color.WHITE);
+		JLabel lblAgregarCarro = new JLabel("Agregar carro");
+		lblAgregarCarro.setBounds(315, 111, 94, 21);
+		panel.add(lblAgregarCarro);
+		lblAgregarCarro.setForeground(Color.WHITE);
+		lblAgregarCarro.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		
-		JLabel lblNewLabel_2 = new JLabel("Agregar carro");
-		lblNewLabel_2.setBounds(315, 111, 94, 21);
-		panel.add(lblNewLabel_2);
-		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		JLabel lblAplicar = new JLabel("Aplicar a financiamiento");
+		lblAplicar.setBounds(495, 112, 162, 19);
+		panel.add(lblAplicar);
+		lblAplicar.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		lblAplicar.setForeground(Color.WHITE);
 		
-		JLabel lblNewLabel_6 = new JLabel("Aplicar a financiamiento");
-		lblNewLabel_6.setBounds(495, 112, 162, 19);
-		panel.add(lblNewLabel_6);
-		lblNewLabel_6.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		lblNewLabel_6.setForeground(Color.WHITE);
+		JLabel lblCar1 = new JLabel("");
+		lblCar1.setBounds(10, 30, 104, 71);
+		panel.add(lblCar1);
+		lblCar1.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen19.png"));
 		
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setBounds(10, 30, 104, 71);
-		panel.add(lblNewLabel_3);
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen19.png"));
-		
-		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setBounds(667, 24, 150, 108);
-		panel.add(lblNewLabel_4);
-		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen17.png"));
+		JLabel lblCar2 = new JLabel("");
+		lblCar2.setBounds(667, 24, 150, 108);
+		panel.add(lblCar2);
+		lblCar2.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen17.png"));
 		
 		JLabel lblNewLabel_7 = new JLabel("El auto que necesitas");
 		lblNewLabel_7.setBounds(186, 146, 510, 48);
 		lblNewLabel_7.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 40));
 		contentPane.add(lblNewLabel_7);
 		
-		JLabel lblNewLabel_8 = new JLabel("");
-		lblNewLabel_8.setBounds(10, 146, 183, 161);
-		lblNewLabel_8.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen12.png"));
-		contentPane.add(lblNewLabel_8);
+		JLabel lblimage1 = new JLabel("");
+		lblimage1.setBounds(10, 146, 183, 161);
+		lblimage1.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen12.png"));
+		contentPane.add(lblimage1);
 		
 		JLabel lblNewLabel_7_1 = new JLabel("al mejor precio");
 		lblNewLabel_7_1.setBounds(244, 202, 367, 48);
 		lblNewLabel_7_1.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 40));
 		contentPane.add(lblNewLabel_7_1);
 		
-		JLabel lblNewLabel_8_1 = new JLabel("");
-		lblNewLabel_8_1.setBounds(653, 146, 192, 161);
-		lblNewLabel_8_1.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen13.png"));
-		contentPane.add(lblNewLabel_8_1);
+		JLabel lblimage2 = new JLabel("");
+		lblimage2.setBounds(653, 146, 192, 161);
+		lblimage2.setIcon(new ImageIcon("C:\\Users\\sirja\\Downloads\\Imagen13.png"));
+		contentPane.add(lblimage2);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(5, 312, 872, 259);
@@ -164,45 +174,45 @@ public class PrincipalVentas extends JFrame {
 		lblNewLabel_9.setForeground(Color.WHITE);
 		panel_1.add(lblNewLabel_9);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(240, 78, 152, 21);
-		comboBox.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Marca", "Acura", "BMW", "Chevrolet", "Hyundai", "Kia", "Mazda", "Mitsubishi", "Nissan", "Lexus", "Toyota"}));
-		panel_1.add(comboBox);
+		JComboBox comboBoxMarca = new JComboBox();
+		comboBoxMarca.setBounds(240, 78, 152, 21);
+		comboBoxMarca.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		comboBoxMarca.setModel(new DefaultComboBoxModel(new String[] {"Marca", "Acura", "BMW", "Chevrolet", "Hyundai", "Kia", "Mazda", "Mitsubishi", "Nissan", "Lexus", "Toyota"}));
+		panel_1.add(comboBoxMarca);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(44, 78, 152, 21);
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Tipo", "Sedán", "Suv", "Pickup", "Hacktback", "Panel"}));
-		comboBox_1.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		panel_1.add(comboBox_1);
+		JComboBox comboBox_Tipo = new JComboBox();
+		comboBox_Tipo.setBounds(44, 78, 152, 21);
+		comboBox_Tipo.setModel(new DefaultComboBoxModel(new String[] {"Tipo", "Sedán", "Suv", "Pickup", "Hacktback", "Panel"}));
+		comboBox_Tipo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		panel_1.add(comboBox_Tipo);
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(446, 78, 152, 21);
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Precio desde ", "$5,000", "$10,000", "$15,000", "$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000"}));
-		comboBox_2.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		panel_1.add(comboBox_2);
+		JComboBox comboBoxPrecioDesde = new JComboBox();
+		comboBoxPrecioDesde.setBounds(446, 78, 152, 21);
+		comboBoxPrecioDesde.setModel(new DefaultComboBoxModel(new String[] {"Precio desde ", "$5,000", "$10,000", "$15,000", "$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000"}));
+		comboBoxPrecioDesde.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		panel_1.add(comboBoxPrecioDesde);
 		
-		JComboBox comboBox_2_1 = new JComboBox();
-		comboBox_2_1.setBounds(653, 78, 152, 21);
-		comboBox_2_1.setModel(new DefaultComboBoxModel(new String[] {"Precio hasta", "$5,000", "$10,000", "$15,000", "$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000", "$55,000", "$60,000", "$65,000", "$70,000", "$75,000", "$80,000", "$85,000", "$90,000", "$95,000", "$100,000"}));
-		comboBox_2_1.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		panel_1.add(comboBox_2_1);
+		JComboBox comboBoxPrecioHasta = new JComboBox();
+		comboBoxPrecioHasta.setBounds(653, 78, 152, 21);
+		comboBoxPrecioHasta.setModel(new DefaultComboBoxModel(new String[] {"Precio hasta", "$5,000", "$10,000", "$15,000", "$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000", "$55,000", "$60,000", "$65,000", "$70,000", "$75,000", "$80,000", "$85,000", "$90,000", "$95,000", "$100,000"}));
+		comboBoxPrecioHasta.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		panel_1.add(comboBoxPrecioHasta);
 		
-		JComboBox comboBox_1_1 = new JComboBox();
-		comboBox_1_1.setBounds(183, 141, 152, 21);
-		comboBox_1_1.setModel(new DefaultComboBoxModel(new String[] {"Año desde ", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"}));
-		comboBox_1_1.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		panel_1.add(comboBox_1_1);
+		JComboBox comboBoxAñoDesde = new JComboBox();
+		comboBoxAñoDesde.setBounds(183, 141, 152, 21);
+		comboBoxAñoDesde.setModel(new DefaultComboBoxModel(new String[] {"Año desde ", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"}));
+		comboBoxAñoDesde.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		panel_1.add(comboBoxAñoDesde);
 		
-		JComboBox comboBox_1_1_1 = new JComboBox();
-		comboBox_1_1_1.setBounds(520, 141, 152, 21);
-		comboBox_1_1_1.setModel(new DefaultComboBoxModel(new String[] {"Año hasta", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"}));
-		comboBox_1_1_1.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		panel_1.add(comboBox_1_1_1);
+		JComboBox comboBoxAñoHasta = new JComboBox();
+		comboBoxAñoHasta.setBounds(520, 141, 152, 21);
+		comboBoxAñoHasta.setModel(new DefaultComboBoxModel(new String[] {"Año hasta", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"}));
+		comboBoxAñoHasta.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+		panel_1.add(comboBoxAñoHasta);
 		
-		JButton btnNewButton = new JButton("BUSCAR");
-		btnNewButton.setBounds(364, 200, 121, 26);
-		btnNewButton.setFont(new Font("Arial Unicode MS", Font.BOLD, 15));
-		panel_1.add(btnNewButton);
+		JButton btnBuscar = new JButton("BUSCAR");
+		btnBuscar.setBounds(364, 200, 121, 26);
+		btnBuscar.setFont(new Font("Arial Unicode MS", Font.BOLD, 15));
+		panel_1.add(btnBuscar);
 	}
 }
