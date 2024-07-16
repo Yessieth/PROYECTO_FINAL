@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Logica.ListaDeCarros;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -12,9 +14,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
+import javax.swing.JTextArea;
 
 public class Inventario extends JFrame {
-
+	private JTextArea textAreaDisponible;
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
@@ -127,6 +130,16 @@ public class Inventario extends JFrame {
 		lblPrincipal.setForeground(new Color(255, 255, 255));
 		lblPrincipal.setBounds(434, 64, 162, 13);
 		panel.add(lblPrincipal);
+		
+		JLabel lblNewLabel_7 = new JLabel("Autos Disponibles");
+		lblNewLabel_7.setBounds(187, 146, 434, 48);
+		contentPane.add(lblNewLabel_7);
+		lblNewLabel_7.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 40));
+		
+		JTextArea textAreaDisponible = new JTextArea();
+		textAreaDisponible.setEditable(false);
+		textAreaDisponible.setBounds(10, 204, 788, 411);
+		contentPane.add(textAreaDisponible);
 	       lblPrincipal.addMouseListener(new MouseAdapter() {
 	            public void mouseClicked(MouseEvent e) {
 	            	  dispose(); 
@@ -134,5 +147,16 @@ public class Inventario extends JFrame {
 	     		     PrincipalVentas.setVisible(true);
 	            }});
 	}
+	void mostrarCarros(ListaDeCarros listaDECarros) {
+        System.out.println("Carros Disponibles: " + listaDECarros.obtenerCarrosDisponibles().size());
 
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nombres de los Estudiantes:\n");
+
+        for (String modelo : listaDECarros.obtenerCarrosDisponibles()) {
+            sb.append(modelo).append("\n");
+        }
+
+        textAreaDisponible.setText(sb.toString());
+    }
 }

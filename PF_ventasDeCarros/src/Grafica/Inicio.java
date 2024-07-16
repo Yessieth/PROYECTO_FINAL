@@ -129,7 +129,7 @@ public class Inicio extends JFrame {
 		JLabel lblNombreProfesor = new JLabel("Rodrigo Yángüez");
 		springLayout.putConstraint(SpringLayout.NORTH, lblNombreProfesor, 352, SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.WEST, lblNombreProfesor, 358, SpringLayout.WEST, contentPane);
-		springLayout.putConstraint(SpringLayout.SOUTH, lblNombreProfesor, 373, SpringLayout.NORTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblNombreProfesor, 379, SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, lblNombreProfesor, 526, SpringLayout.WEST, contentPane);
 		lblNombreProfesor.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 25));
 		contentPane.add(lblNombreProfesor);

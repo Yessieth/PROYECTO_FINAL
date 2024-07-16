@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -15,16 +17,17 @@ import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.DefaultComboBoxModel;
 
 public class AplicarFinanciamniento extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField textFieldNombre;
+	private JTextField textFieldApellido;
+	private JTextField textFieldCorreo;
+	private JTextField textFieldCedula;
+	private JTextField textFieldTelefono;
 
 	/**
 	 * Launch the application.
@@ -178,53 +181,61 @@ public class AplicarFinanciamniento extends JFrame {
 		contentPane.add(lblInformacinDeIngresos);
 		
 		JComboBox comboBoxMarca = new JComboBox();
+		comboBoxMarca.setModel(new DefaultComboBoxModel(new String[] {"Tipo de financiamiento", "Asalariado", "Independiente", "Servidor Publico", "Extranjero"}));
 		comboBoxMarca.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		comboBoxMarca.setBounds(25, 434, 152, 21);
+		comboBoxMarca.setBounds(25, 434, 187, 27);
 		contentPane.add(comboBoxMarca);
 		
-		JComboBox comboBoxMarca_1 = new JComboBox();
-		comboBoxMarca_1.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		comboBoxMarca_1.setBounds(25, 508, 152, 21);
-		contentPane.add(comboBoxMarca_1);
-		
 		JComboBox comboBoxMarca_2 = new JComboBox();
+		comboBoxMarca_2.setModel(new DefaultComboBoxModel(new String[] {"Rango de salario", "Entre $200 y $299", "Entre $300 y $399", "Entre $400 y $499", "Entre $500 y $599", "Entre $600 y $699", "Entre $700 y $799", "Entre $800 y $899", "Entre $900 y $999", "Más de $1 000"}));
 		comboBoxMarca_2.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		comboBoxMarca_2.setBounds(258, 436, 152, 21);
+		comboBoxMarca_2.setBounds(244, 434, 201, 27);
 		contentPane.add(comboBoxMarca_2);
 		
 		JComboBox comboBoxMarca_3 = new JComboBox();
+		comboBoxMarca_3.setModel(new DefaultComboBoxModel(new String[] {"Continuidad Laboral", "Más de un año laborando", "Menos de un año laborando"}));
 		comboBoxMarca_3.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
-		comboBoxMarca_3.setBounds(258, 510, 152, 21);
+		comboBoxMarca_3.setBounds(142, 486, 201, 27);
 		contentPane.add(comboBoxMarca_3);
 		
-		JButton btnNewButton = new JButton("Validar");
-		btnNewButton.setBounds(489, 480, 85, 21);
-		contentPane.add(btnNewButton);
+		JButton btnValidar = new JButton("Validar");
+		btnValidar.setBounds(471, 452, 85, 21);
+		contentPane.add(btnValidar);
 		
-		textField = new JTextField();
-		textField.setBounds(91, 237, 225, 19);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textFieldNombre = new JTextField();
+		textFieldNombre.setBounds(91, 237, 225, 19);
+		contentPane.add(textFieldNombre);
+		textFieldNombre.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(91, 301, 225, 19);
-		contentPane.add(textField_1);
+		textFieldApellido = new JTextField();
+		textFieldApellido.setColumns(10);
+		textFieldApellido.setBounds(91, 301, 225, 19);
+		contentPane.add(textFieldApellido);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(503, 237, 225, 19);
-		contentPane.add(textField_2);
+		textFieldCorreo = new JTextField();
+		textFieldCorreo.setColumns(10);
+		textFieldCorreo.setBounds(503, 237, 225, 19);
+		contentPane.add(textFieldCorreo);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(424, 301, 135, 19);
-		contentPane.add(textField_3);
+		textFieldCedula = new JTextField();
+		textFieldCedula.setColumns(10);
+		textFieldCedula.setBounds(424, 301, 135, 19);
+		contentPane.add(textFieldCedula);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(645, 301, 124, 19);
-		contentPane.add(textField_4);
+		textFieldTelefono = new JTextField();
+		textFieldTelefono.setColumns(10);
+		textFieldTelefono.setBounds(645, 301, 124, 19);
+		contentPane.add(textFieldTelefono);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setBounds(471, 491, 85, 21);
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+		      // Cierra la ventana actual
+		 			    dispose(); 
+		     AplicarFinanciamniento AplicarFinanciamniento = new AplicarFinanciamniento();
+		     AplicarFinanciamniento.setVisible(true);
+		}});
+		contentPane.add(btnCancelar);
 	}
-
 }
