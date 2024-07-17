@@ -67,8 +67,8 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 		      // Cierra la ventana actual
 		 			    dispose(); 
-		     PrincipalVentas PrincipalVentas = new PrincipalVentas();
-		     PrincipalVentas.setVisible(true);
+		     Inventario inventario = new Inventario();
+		     inventario.setVisible(true);
 		}});
 		contentPane.add(btnMostrarPagina);
 		
